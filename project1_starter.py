@@ -12,7 +12,10 @@ def create_character(name, character_class):
     Creates a new character dictionary with calculated stats
     Returns: dictionary with keys: name, class, level, strength, magic, health, gold
     """
-   return {'name': name, "class": character_class, 'level': level, 'strength': strength, 'magic': magic, 'health': health, 'gold': gold}
+    level = 1 
+    strength, magic, health = calculate_stats(character_class, level)
+    gold = 100   
+return {'name': name, "class": character_class, 'level': level, 'strength': strength, 'magic': magic, 'health': health, 'gold': gold}
     
 
 def calculate_stats(character_class, level):
@@ -35,10 +38,20 @@ def calculate_stats(character_class, level):
         magic = 12 + level * 5
         health = 75 + level * 6
     elif character_class =='Rouge':
+        strength = 7 + level * 4
+        magic = 8 + level * 4
+        health = 85 + level * 8
+    elif character_class == 'Cleric':
         strength = 6 + level * 3
         magic = 10 + level * 4
-        health = 85 + level * 8
-    
+        health = 95 + level * 9
+    else:
+        strength = 8 + level * 2
+        magic = 9 + level * 3
+        health = 80 + level * 8
+    return (strength, magic, health)
+        
+
     
     
   
@@ -57,9 +70,7 @@ def save_character(character, filename):
     Health: [health]
     Gold: [gold]
     """
-    # TODO: Implement this function
-    # Remember to handle file errors gracefully
-    pass
+    f = open(fliename, 'w')
 
 def load_character(filename):
     """

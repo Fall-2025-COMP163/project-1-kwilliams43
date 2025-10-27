@@ -11,14 +11,9 @@ def create_character(name, character_class):
     """
     Creates a new character dictionary with calculated stats
     Returns: dictionary with keys: name, class, level, strength, magic, health, gold
-    
-    Example:
-    char = create_character("Aria", "Mage")
-    # Should return: {"name": "Aria", "class": "Mage", "level": 1, "strength": 5, "magic": 15, "health": 80, "gold": 100}
     """
-    # TODO: Implement this function
-    # Remember to use calculate_stats() function for stat calculation
-    pass
+   return {'name': name, "class": character_class, 'level': level, 'strength': strength, 'magic': magic, 'health': health, 'gold': gold}
+    
 
 def calculate_stats(character_class, level):
     """
@@ -31,9 +26,22 @@ def calculate_stats(character_class, level):
     - Rogues: Medium strength, medium magic, low health
     - Clerics: Medium strength, high magic, high health
     """
-    # TODO: Implement this function
-    # Return a tuple: (strength, magic, health)
-    pass
+    if character_class == 'Warrior':
+        strength = 10 + level * 5
+        magic = 3 + level * 2
+        health = 100 + level * 10
+    elif character_class =='Mage':
+        strength = 3 + level * 2
+        magic = 12 + level * 5
+        health = 75 + level * 6
+    elif character_class =='Rouge':
+        strength = 6 + level * 3
+        magic = 10 + level * 4
+        health = 85 + level * 8
+    
+    
+    
+  
 
 def save_character(character, filename):
     """

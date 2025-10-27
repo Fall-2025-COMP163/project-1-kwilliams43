@@ -6,18 +6,6 @@ Date: [Date]
 AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
-
-def create_character(name, character_class):
-    """
-    Creates a new character dictionary with calculated stats
-    Returns: dictionary with keys: name, class, level, strength, magic, health, gold
-    """
-    level = 1 
-    strength, magic, health = calculate_stats(character_class, level)
-    gold = 100   
-return {'name': name, "class": character_class, 'level': level, 'strength': strength, 'magic': magic, 'health': health, 'gold': gold}
-    
-
 def calculate_stats(character_class, level):
     """
     Calculates base stats based on class and level
@@ -50,6 +38,21 @@ def calculate_stats(character_class, level):
         magic = 9 + level * 3
         health = 80 + level * 8
     return (strength, magic, health)
+
+
+
+def create_character(name, character_class):
+    """
+    Creates a new character dictionary with calculated stats
+    Returns: dictionary with keys: name, class, level, strength, magic, health, gold
+    """
+    level = 1 
+    strength, magic, health = calculate_stats(character_class, level)
+    gold = 100   
+return {'name': name, "class": character_class, 'level': level, 'strength': strength, 'magic': magic, 'health': health, 'gold': gold}
+    
+
+
         
 
     
@@ -128,7 +131,7 @@ def display_character(character):
     print(f'Magic: {character['magic']}')
     print(f'Health: {character['health']}')
     print(f'Gold: {character['gold']}')
-    print('========================')
+    print('========================')}
 
     
 
@@ -143,7 +146,7 @@ def level_up(character):
     character['strength'] = strength
     character['magic'] = magic
     character['health'] = health
-    print(f'{character['name']} leveled up to level {character['level']}!')
+    return(f'{character['name']} leveled up to level {character['level']}!')
     
 
 # Main program area (optional - for testing your functions)

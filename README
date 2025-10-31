@@ -1,1 +1,90 @@
+This project is a Character Creator program written in Python. It allows users to create a custom RPG-style character, save and load character data to a text file, and simulate leveling up.
+The goal of this project is to practice functions, dictionaries, file I/O, and program structure in Python.
+
+The program demonstrates:
+
+Function design and return values
+Dictionary usage for storing character stats
+Reading and writing data to text files
+Conditional logic and calculations
+Input/output formatting and user interaction
+
+
+
+Features
+
+
+Create a Character – Enter a name and select a class (Warrior, Mage, Rogue, or Cleric).
+Auto-Generate Stats – The program calculates initial stats (strength, magic, health, gold) based on the chosen class.
+Save Character – Save your character’s details to a text file in a clear, formatted layout.
+Load Character – Reload your character’s stats from a file to continue progress.
+Display Character Sheet – Print all stats in an easy-to-read format.
+Level Up System – Increase your level and recalculate stats automatically.
+
+How It Works
+
+
+calculate_stats(character_class, level)
+Determines the base stats for the chosen class.
+Returns a tuple of (strength, magic, health).
+Each class has unique stat growth rates:
+Warrior: High strength and health, low magic.
+Mage: High magic, low strength, moderate health.
+Rogue: Balanced stats, agile and quick.
+Cleric: Strong in magic and health.
+
+
+
+create_character(name, character_class)
+
+Creates a dictionary representing the character.
+Initializes:
+level = 1
+gold = 100
+Calls calculate_stats() to generate base attributes.
+
+
+
+
+save_character(character, filename)
+
+Saves all character information to a text file in a human-readable format.
+Returns True if the file saves successfully, otherwise False.
+
+
+
+load_character(filename)
+
+
+Reads data from a previously saved text file.
+Reconstructs and returns a character dictionary.
+Returns None if the file is not found.
+
+
+display_character(character)
+
+Prints a formatted character sheet to the console
+
+
+
+level_up(character)
+
+Increases the character’s level by 1.
+Recalculates stats using calculate_stats().
+Prints a confirmation message
+
+
+How to Run the Program
+
+Open your terminal or command prompt.
+Navigate to the folder containing the file
+Run the program
+Follow the on-screen prompts:
+Enter your character’s name.
+-Choose a class.
+-View, save, and reload your character.
+-Level up and see your stats increase!
+
+
+
 
